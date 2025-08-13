@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Transactions - Finance Tracker{% endblock %}
+
+{% block content %}
+    <h2 class="mb-4">Your Transactions</h2>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3>Add New Transaction</h3>
+        </div>
+        <div class="card-body">
+            <form id="transaction-form">
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description:</label>
+                    <input type="text" class="form-control" id="description" name="description" required>
+                </div>
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Amount:</label>
+                    <input type="number" class="form-control" id="amount" name="amount" step="0.01" required>
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category:</label>
+                    <input type="text" class="form-control" id="category" name="category" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Transaction</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Transaction List</h3>
+        </div>
+        <div class="card-body">
+            <p>Total Balance: <span id="total-balance" class="fw-bold">0.00</span></p>
+            <ul class="list-group" id="transactions-list">
+                <!-- Transactions will be loaded here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+{% endblock %}

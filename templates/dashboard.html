@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Finance Tracker{% endblock %}
+
+{% block content %}
+    <h2 class="mb-4">Dashboard</h2>
+    <p class="lead">Welcome to your finance tracker dashboard!</p>
+    
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Balance</h5>
+                    <p class="card-text fs-3" id="total-balance">0.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Spending by Category</h5>
+                    <ul class="list-group list-group-flush" id="category-summary-list">
+                        <!-- Category summary will be loaded here by JavaScript -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p>Go to <a href="{{ url_for('transactions_page') }}">Transactions</a> to add and view your transactions.</p>
+    <p>Go to <a href="{{ url_for('budget_page') }}">Budget</a> to manage your budgets.</p>
+{% endblock %}

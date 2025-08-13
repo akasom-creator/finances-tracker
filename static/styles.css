@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background from Bootstrap */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Bootstrap-like shadow */
+    margin-top: 20px;
+}
+
+h2, h3 {
+    color: #343a40; /* Dark text from Bootstrap */
+    margin-bottom: 1.5rem;
+}
+
+/* Forms */
+form {
+    margin-bottom: 20px;
+}
+
+/* Flash messages (already handled by Bootstrap alerts in base.html) */
+
+/* Transaction and Budget Lists */
+#transactions-list, #category-summary-list, #budgets-list {
+    list-style: none;
+    padding: 0;
+}
+
+#transactions-list li, #category-summary-list li, #budgets-list li {
+    background-color: #f8f9fa; /* Light background for list items */
+    border: 1px solid #e9ecef; /* Light border */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#transactions-list li .amount, #category-summary-list li .amount, #budgets-list li .amount {
+    font-weight: bold;
+    color: #28a745; /* Green for positive amounts */
+}
+
+/* Specific styles for delete buttons in lists */
+#budgets-list .delete-budget {
+    background-color: #dc3545; /* Red for delete button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+#budgets-list .delete-budget:hover {
+    background-color: #c82333;
+}

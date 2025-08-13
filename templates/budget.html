@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Budget - Finance Tracker{% endblock %}
+
+{% block content %}
+    <h2 class="mb-4">Budget</h2>
+    <p class="lead">Set and manage your budgets here.</p>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3>Set New Budget</h3>
+        </div>
+        <div class="card-body">
+            <form id="budget-form">
+                <div class="mb-3">
+                    <label for="budget-category" class="form-label">Category:</label>
+                    <input type="text" class="form-control" id="budget-category" name="category" required>
+                </div>
+                <div class="mb-3">
+                    <label for="budget-amount" class="form-label">Amount:</label>
+                    <input type="number" class="form-control" id="budget-amount" name="amount" step="0.01" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Set Budget</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Your Budgets</h3>
+        </div>
+        <div class="card-body">
+            <ul class="list-group" id="budgets-list">
+                <!-- Budgets will be loaded here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+{% endblock %}
