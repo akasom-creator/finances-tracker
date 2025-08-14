@@ -19,7 +19,7 @@ login_manager.login_view = 'login'
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    password_hash = db.Column(db.String(120), nullable=False)
+    password_hash = db.Column(db.String(255), nullable=False)
     transactions = db.relationship('Transaction', backref='user', lazy=True)
     budgets = db.relationship('Budget', backref='user', lazy=True)
 
